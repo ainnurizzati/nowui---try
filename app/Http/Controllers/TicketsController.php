@@ -55,9 +55,9 @@ class TicketsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Tickets $tickets)
+    public function show(Tickets $ticket)
     {
-        return view('tickets.show',compact('tickets'));
+        return view('tickets.show',compact('ticket'));
     }
 
     /**
@@ -66,9 +66,9 @@ class TicketsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tickets $tickets)
+    public function edit(Tickets $ticket)
     {
-        return view('tickets.edit',compact('tickets'));
+        return view('tickets.edit',compact('ticket'));
     }
 
     /**
@@ -78,14 +78,14 @@ class TicketsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tickets $tickets)
+    public function update(Request $request, Tickets $ticket)
     {
         $request->validate([
             'name' => 'required',
             'detail' => 'required',
         ]);
 
-        $tickets->update($request->all());
+        $ticket->update($request->all());
 
         return redirect()->route('tickets.index')
                         ->with('success','Tickets updated successfully');
@@ -97,9 +97,9 @@ class TicketsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tickets $tickets)
+    public function destroy(Tickets $ticket)
     {
-        $tickets->delete();
+        $ticket->delete();
 
         return redirect()->route('tickets.index')
                         ->with('success','Tickets deleted successfully');
