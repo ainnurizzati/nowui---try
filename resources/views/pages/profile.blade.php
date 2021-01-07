@@ -9,37 +9,37 @@ Profile| Dutarini CRM
 
 @section('content')
 
-    <!--Sidebar-->
-    <div class="sidebar" data-color="blue">
-        <!--
-          Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-      -->
-        <div class="logo">
-          <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-            D
+<!--Sidebar-->
+<div class="sidebar" data-color="blue">
+    <!--
+      Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+  -->
+    <div class="logo">
+      <a href="/tickets" class="simple-text logo-mini">
+        D
+      </a>
+      <a href="/tickets" class="simple-text logo-normal">
+        DUTARINI CRM
+      </a>
+    </div>
+    <div class="sidebar-wrapper" id="sidebar-wrapper">
+      <ul class="nav">
+        <li>
+          <a href="/tickets">
+            <i class="now-ui-icons files_paper "></i>
+            <p>Tickets</p>
           </a>
-          <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            DUTARINI CRM
+        </li>
+        <li>
+          <a href="/settings">
+            <i class="now-ui-icons ui-1_settings-gear-63"></i>
+            <p>Settings</p>
           </a>
-        </div>
-        <div class="sidebar-wrapper" id="sidebar-wrapper">
-          <ul class="nav">
-            <li class= "active">
-              <a href="/dashboard">
-                <i class="now-ui-icons design_app"></i>
-                <p>Dashboard</p>
-              </a>
-            </li>
-            <li>
-              <a href="/tickets">
-                <i class="now-ui-icons files_paper"></i>
-                <p>Tickets</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <!--Sidebar,--><!--Add here because need to active the sidebar  -->
+        </li>
+      </ul>
+    </div>
+  </div>
+<!--Sidebar,--><!--Add here because need to active the sidebar  -->
 
 
     <!--Page Content-->
@@ -48,38 +48,13 @@ Profile| Dutarini CRM
         <div class="card">
             <div class="card-header">
                 <div>
-                    <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+                    <div class="py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
                         @if (Laravel\Fortify\Features::canUpdateProfileInformation())
                             @livewire('profile.update-profile-information-form')
 
                             <x-jet-section-border />
                         @endif
 
-                        @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-                            <div class="mt-10 sm:mt-0">
-                                @livewire('profile.update-password-form')
-                            </div>
-
-                            <x-jet-section-border />
-                        @endif
-
-                        @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
-                            <div class="mt-10 sm:mt-0">
-                                @livewire('profile.two-factor-authentication-form')
-                            </div>
-
-                            <x-jet-section-border />
-                        @endif
-
-                        <div class="mt-10 sm:mt-0">
-                            @livewire('profile.logout-other-browser-sessions-form')
-                        </div>
-
-                        <x-jet-section-border />
-
-                        <div class="mt-10 sm:mt-0">
-                            @livewire('profile.delete-user-form')
-                        </div>
                     </div>
                 </div>
             </div>

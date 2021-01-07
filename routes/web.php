@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TicketsController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,16 +19,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('pages.dashboard');
-});
-
 Route::get('/tickets', function () {
-    return view('pages.index');
+    return view('pages.tickets');
 });
 
 Route::get('/profile', function () {
     return view('pages.profile');
 });
 
-Route::resource('tickets', TicketsController::class);
+Route::get('/settings', function () {
+    return view('pages.settings');
+});
+
+
